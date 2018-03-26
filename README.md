@@ -5,7 +5,9 @@
   目前正在补充图像处理，机器学习，深度学习等相关知识
 
 # 完成了数据收集部分：
-  VideoPart：获取摄像头图像 并进行图片预处理
+  VideoPart.py：获取摄像头图像 并进行图片预处理
   
-  DataTransform：将图片和标记生成TFRecord文件
+  DataTransform.py：将图片和标记生成TFRecord文件
+  
+  ReadFile.py：读取tfrecord文件并包含转换标签为one-hot编码的方法
 
