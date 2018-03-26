@@ -8,7 +8,7 @@ import numpy as np
 参数：tfrecordfile
      batchsize
 '''
-def read_tfrecord(tfrecordfile, batchsize, random_crop=False, random_clip=False, shuffle_batch=True):
+def read_tfrecord(tfrecordfile, batchsize, random_crop=False, random_clip=False):
     filequeue = tf.train.string_input_producer([tfrecordfile])  # 将tfrecordfile读入队列
     reader = tf.TFRecordReader()  # 创建reader对象
     ret, example = reader.read(filequeue)  # 读取序列化对象
