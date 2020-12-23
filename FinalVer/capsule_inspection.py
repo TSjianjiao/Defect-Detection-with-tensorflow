@@ -198,7 +198,8 @@ def train(opech, is_continnue_train=False):
         if is_continnue_train:
             # 装载checkpoint
             savemodel = tf.train.latest_checkpoint('./model/')
-            saver.restore(sess, savemodel)
+            if not savemodel is None:
+                saver.restore(sess, savemodel)
         for i in range(opech):
             str_ing = 'lr=' + str(learning_rate) + '迭代=' + str(opech)
 
@@ -340,9 +341,9 @@ def tes_part(imagedir):
         elif maxindex == 1:
             return '凹陷'
         elif maxindex == 2:
-            return '帽子'
+            return '缺帽子'
         elif maxindex == 3:
-            return '身体'
+            return '缺身体'
 
 # 摄像头拍照并预测
 def video_test():
@@ -390,7 +391,7 @@ def video_test():
 train(400, is_continnue_train=True)
 
 
-# 文件夹所有内容测试
+#文件夹所有内容测试
 # for root, dirs, files in os.walk('D:/Image/test/'):
 #     for filename in files:
 #         filepath = os.path.join(root, filename)  # 获取文件地址
